@@ -1,0 +1,467 @@
+@charset "UTF-8";
+/*Oscar Burman April 2024*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  background-color: #1C1C1C;
+  pointer-events: none;
+  color: wheat;
+  text-align: justify;
+  scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5, h6{
+  text-align: center;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+.topImage {
+  width: 100%;
+  height: 1080px;
+  background: url("../images/amdImg.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.infoContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+.ceoCard {
+  max-width: 440px;
+  padding: 20px;
+  border-radius: 1em;
+  font-size: 1.2em;
+  z-index: -2;
+  pointer-events: all;
+  position: relative;
+}
+.cardBorder {
+  height: 820px;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 0.3em;
+}
+.cardBorder p {
+  font-size: 1.3em;
+}
+.cardBorder a {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+}
+.ceoCard h1 {
+  text-align: center;
+}
+.imageCeo {
+  width: 100%;
+  height: 250px;
+  background: url("./images/ceo_a.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 1em;
+}
+.imageOfNCeo {
+  background: url("./images/ceo_n.png") no-repeat;
+}
+.imageCeo::after {
+  content: "Lisa Su";
+  position: absolute;
+  font-size: 2em;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 470px;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(242,242,242,0) 89%);
+}
+.imageOfNCeo::after {
+  content: "Jensen Huang";
+}
+.linkWrapper {
+  position: absolute;
+  bottom: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.linkContainer {
+  margin: auto;
+  padding: 1px;
+  width: fit-content;
+  overflow: hidden;
+}
+.linkContainer a {
+  display: block;
+  background-color: #1C1C1C;
+  padding: 1em;
+  width: fit-content;
+  position: relative;
+  pointer-events: all;
+  color: wheat;
+}
+.linkContainer a::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 60%;
+  top: 25%;
+  left: -50%;
+  background-color: gray;
+  animation: rotateBorder 7s infinite linear;
+  z-index: -1;
+  pointer-events: none;
+}
+.history {
+  width: 60%;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 0.3em;
+  margin-top: 20px;
+}
+.history p {
+  font-size: 1.6em;
+}
+.stock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+.stock div{
+  width: 100%;
+  height: 60vh;
+  background: url("../images/amdStock.jpg") no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+.stock iframe{
+  width: 600px;
+  height: 550px;
+  border: none;
+  pointer-events: all;
+}
+.news{
+  padding: 20px;
+}
+.news h1{
+  font-size: 3em;
+  margin-bottom: 10px;
+  text-align: left;
+  color: white;
+}
+.newsCards{
+  display: flex;
+  justify-content: space-evenly;
+}
+.newsCard{
+  background-color: rgb(33, 39, 48);
+  width: 450px;
+  height: 500px;  
+  position: relative;
+}
+.newsCard::after{
+  content: attr(data-date);
+  position: absolute;
+  font-size: 2em;
+  color: lightgrey;
+  left: 20px;
+  bottom: 20px;
+}
+.newsCard a{
+  font-size: 2em;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  width: 90%;
+  margin: auto;
+  pointer-events: all;
+}
+.newsCard a:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+.cardImg{
+  width: 450px;
+  height: 253px;
+  margin-bottom: 10px;
+  background: url("../images/cardImg1.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: .4s ease-in-out;
+  pointer-events: all;
+}
+.cardImg:hover{
+  transform: scale(1.1);
+}
+.imgZoom{
+  overflow: hidden;
+  height: 253px;
+}
+.cardImgTwo{
+  background: url("../images/cardImg2.jpg") no-repeat;
+}
+.cardImgThree{
+  background: url("../images/cardImg3.jpg") no-repeat;
+}
+.cardImgFour{
+  background: url("../images/cardImg4.jpg") no-repeat;
+}
+.seriesHeader{
+  margin-top: 10px;
+}
+.newChip, .rxxtGpu{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.newChip article, .rxxtGpu article{
+  width: 50%;
+  padding: 20px;
+  color: white;
+  font-size: 1.7em;
+  border: 1px solid gray
+}
+.newChip img, .rxxtGpu img{
+ align-self: stretch;
+}
+.newChip article h2{
+  text-align: left;
+  margin-bottom: 10px;
+}
+.rxxtHeader{
+  margin-top: 10px;
+}
+.rxxtGpu img{
+  width: 600px;
+  height: 338px;
+}
+.headerContainer{
+  margin: auto;
+  margin-top: 60px;
+  width: 800px;
+  display: grid;
+  grid-template-areas: 
+  "one two"
+  "one three";
+  column-gap: 20px;
+  color: black;
+  margin-bottom: 120px;
+  font-size: 2em;
+}
+.ai, .applications{
+  padding-top: 20px;
+  width: 100%;
+  height: 100vh;
+  background: url("../images/redBg.jpg") no-repeat;
+  background-position: center;
+  background-size: cover; 
+  background-attachment: fixed;
+}
+.headerContainer img{
+  width: 162px;
+  height: 205px;
+  grid-area: one;
+  mix-blend-mode: color-burn;
+}
+.headerContainer h1{
+  text-align: left;
+  margin-bottom: 10px;
+  grid-area: two;
+}
+.headerContainer h2{
+  text-align: left;
+  grid-area: three;
+}
+.aiCharts{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.aiBlock{
+  width: 500px;
+  font-size: 1.9em;
+  text-align: left;
+}
+.aiBlock h1{
+  text-align: left;
+  margin-bottom: 10px;
+}
+.aiCharts .aiBlock:nth-child(2){
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.applications{
+  background: url("../images/redBg2.jpg") no-repeat;
+  background-position: center;
+  background-size: cover; 
+  background-attachment: fixed;
+  font-size: 1.9em;
+}
+.applications h1{
+  margin-bottom: 10px;
+}
+.applications h2{
+  width: 60%;
+  margin: auto;
+}
+.appContainer{
+  margin-top: 140px;
+  display: flex;
+  justify-content: center;
+  font-size: 0.8em;
+  text-align: left;
+  gap: 40px;
+}
+.app{
+  background-color: rgb(33, 39, 48);
+  width: 320px;
+  padding-bottom: 20px;
+}
+.app img{
+  width: 320px;
+  height: 170px;
+}
+.app h1{
+  text-align: left;
+  font-size: 1.7em;
+  margin-left: 7px;
+}
+.app p{
+  margin-left: 20px;
+}
+footer{
+  display: block;
+  width: 100%;
+  height: 500px;
+  background: rgb(33,39,48);
+  background: linear-gradient(180deg, rgba(33,39,48,1) 0%, rgba(0,0,0,1) 89%);
+}
+.footerLinks{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.footerContainer{
+  font-size: 1.7em;
+  margin-top: 80px;
+}
+.footerContainer h1{
+  text-align: left;
+  margin-bottom: 20px;
+}
+.footerContainer a{
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  pointer-events: all;
+  margin-bottom: 4px;
+  transition: .8s ease-in-out;
+}
+.footerContainer a:hover{
+  border-left: 1px solid grey;
+}
+.pageInfo{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 2em;
+  font-weight: bold;
+}
+.pageInfo h1 span{
+  animation: wave 3s ease-in-out infinite;
+}
+.pageInfo h1:nth-child(1) span:nth-child(1){
+  animation-delay: 0s;
+}
+.pageInfo h1:nth-child(1) span:nth-child(2){
+  animation-delay: .1s;
+}
+.pageInfo h1:nth-child(1) span:nth-child(3){
+  animation-delay: .2s;
+}
+.pageInfo h1:nth-child(1) span:nth-child(4){
+  animation-delay: .3s;
+}
+.pageInfo h1:nth-child(1) span:nth-child(5){
+  animation-delay: .4s;
+}
+.pageInfo h1:nth-child(2) span:nth-child(1){
+  animation-delay: .5s;
+}
+.pageInfo h1:nth-child(2) span:nth-child(2){
+  animation-delay: .6s;
+}
+.pageInfo h1:nth-child(2) span:nth-child(3){
+  animation-delay: .7s;
+}
+.pageInfo h1:nth-child(2) span:nth-child(4){
+  animation-delay: .8s;
+}
+.pageInfo h1:nth-child(2) span:nth-child(5){
+  animation-delay: .9s;
+}
+.pageInfo h1:nth-child(2) span:nth-child(6){
+  animation-delay: 1s;
+}
+.pageInfo h1:nth-child(3) span:nth-child(1){
+  animation-delay: 1.1s;
+}
+.pageInfo h1:nth-child(3) span:nth-child(2){
+  animation-delay: 1.2s;
+}
+.pageInfo h1:nth-child(3) span:nth-child(3){
+  animation-delay: 1.3s;
+}
+.pageInfo h1:nth-child(3) span:nth-child(4){
+  animation-delay: 1.4s;
+}
+.pageInfo h1:nth-child(3) span:nth-child(5){
+  animation-delay: 1.5s;
+}
+.pageInfo h1:nth-child(4) span:nth-child(1){
+  animation-delay: 1.6s;
+}
+.pageInfo h1:nth-child(4) span:nth-child(2){
+  animation-delay: 1.7s;
+}
+.pageInfo h1:nth-child(4) span:nth-child(3){
+  animation-delay: 1.8s;
+}
+.pageInfo h1:nth-child(4) span:nth-child(4){
+  animation-delay: 1.9s;
+}
+@keyframes flip {
+  0%,
+  80% {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes wave{
+  0%{
+     opacity: 0;
+  }50%{
+     opacity: 1;
+  }100%{
+     opacity: 0;
+  }
+}
