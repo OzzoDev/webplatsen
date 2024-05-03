@@ -20,37 +20,69 @@ h1, h2, h3, h4, h5, h6{
 ::-webkit-scrollbar {
   width: 0;
 }
+.topZoomPadding{
+  overflow: hidden;
+}
 .topImage {
   width: 100%;
   height: 1080px;
+  display: flex;
+  align-items: flex-end;
   background: url("../images/amdImg.jpg") no-repeat;
   background-position: center;
   background-size: cover;
+  animation: infiniteZoom 10s infinite ease-in-out;
+}
+.topImage ul{
+  width: 100%;
+  height: 160px;
+  padding-top: 20px;
+  display: flex;
+  column-gap: 30px;
+  justify-content: center;
+}
+.topImage ul li{
+  list-style: none;
+  text-align: left;
+}
+.topImage ul li a{
+  text-decoration: none;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 2em;
+  pointer-events: all;
+  color: silver;
+}
+.topImage ul li a:hover{
+  border-right: 1px solid grey;
+  border-left: 1px solid grey;
 }
 .infoContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 10%;
 }
 .ceoCard {
-  max-width: 440px;
+  width: 40%;
   padding: 20px;
+  padding-bottom: 0;
+  margin-top: 20px;
   border-radius: 1em;
   font-size: 1.2em;
   z-index: -2;
   pointer-events: all;
   position: relative;
 }
-.cardBorder {
-  height: 820px;
+.ceoCard {
   padding: 20px;
   border: 1px solid grey;
   border-radius: 0.3em;
 }
-.cardBorder p {
+.ceoCard p {
   font-size: 1.3em;
+  margin-bottom: 90px;
 }
-.cardBorder a {
+.ceoCard a {
   display: block;
   text-align: center;
   font-size: 1.2em;
@@ -81,9 +113,6 @@ h1, h2, h3, h4, h5, h6{
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(242,242,242,0) 89%);
 }
-.imageOfNCeo::after {
-  content: "Jensen Huang";
-}
 .linkWrapper {
   position: absolute;
   bottom: 3em;
@@ -99,7 +128,7 @@ h1, h2, h3, h4, h5, h6{
 .linkContainer a {
   display: block;
   background-color: #1C1C1C;
-  padding: 1em;
+  padding: 15px;
   width: fit-content;
   position: relative;
   pointer-events: all;
@@ -110,7 +139,7 @@ h1, h2, h3, h4, h5, h6{
   position: absolute;
   width: 200%;
   height: 60%;
-  top: 25%;
+  top: 50%;
   left: -50%;
   background-color: gray;
   animation: rotateBorder 7s infinite linear;
@@ -118,7 +147,7 @@ h1, h2, h3, h4, h5, h6{
   pointer-events: none;
 }
 .history {
-  width: 60%;
+  width: 40%;
   padding: 20px;
   border: 1px solid grey;
   border-radius: 0.3em;
@@ -131,18 +160,20 @@ h1, h2, h3, h4, h5, h6{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   padding: 40px;
+  gap: 40px;
 }
 .stock div{
-  width: 100%;
+  width: 60%;
   height: 60vh;
   background: url("../images/amdStock.jpg") no-repeat;
   background-position: left;
   background-size: contain;
 }
 .stock iframe{
-  width: 600px;
-  height: 550px;
+  width: 500px;
+  height: 500px;
   border: none;
   pointer-events: all;
 }
@@ -158,6 +189,8 @@ h1, h2, h3, h4, h5, h6{
 .newsCards{
   display: flex;
   justify-content: space-evenly;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .newsCard{
   background-color: rgb(33, 39, 48);
@@ -220,6 +253,8 @@ h1, h2, h3, h4, h5, h6{
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .newChip article, .rxxtGpu article{
   width: 50%;
@@ -282,6 +317,7 @@ h1, h2, h3, h4, h5, h6{
 .aiCharts{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .aiBlock{
@@ -304,18 +340,20 @@ h1, h2, h3, h4, h5, h6{
   background-position: center;
   background-size: cover; 
   background-attachment: fixed;
-  font-size: 1.9em;
+  font-size: 2.2em;
+  padding-bottom: 40px;
 }
 .applications h1{
   margin-bottom: 10px;
 }
-.applications h2{
+.applications .appTextBlock{
   width: 60%;
   margin: auto;
 }
 .appContainer{
   margin-top: 140px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   font-size: 0.8em;
   text-align: left;
@@ -339,20 +377,22 @@ h1, h2, h3, h4, h5, h6{
   margin-left: 20px;
 }
 footer{
+  padding-top: 40px;
+  padding-bottom: 40px;
   display: block;
   width: 100%;
-  height: 500px;
   background: rgb(33,39,48);
   background: linear-gradient(180deg, rgba(33,39,48,1) 0%, rgba(0,0,0,1) 89%);
 }
 .footerLinks{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 100px;
+  column-gap: 100px;
+  row-gap: 20px;
 }
 .footerContainer{
   font-size: 1.7em;
-  margin-top: 80px;
 }
 .footerContainer h1{
   text-align: left;
@@ -375,12 +415,13 @@ footer{
   margin-top: 100px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 40px;
   font-size: 2em;
   font-weight: bold;
 }
 .pageInfo h1 span{
-  animation: wave 3s ease-in-out infinite;
+  animation: wave 4s ease-in-out infinite;
 }
 .pageInfo h1:nth-child(1) span:nth-child(1){
   animation-delay: 0s;
@@ -427,25 +468,40 @@ footer{
 .pageInfo h1:nth-child(3) span:nth-child(4){
   animation-delay: 1.4s;
 }
-.pageInfo h1:nth-child(3) span:nth-child(5){
+.pageInfo h1:nth-child(4) span:nth-child(1){
   animation-delay: 1.5s;
 }
-.pageInfo h1:nth-child(4) span:nth-child(1){
+.pageInfo h1:nth-child(4) span:nth-child(2){
   animation-delay: 1.6s;
 }
-.pageInfo h1:nth-child(4) span:nth-child(2){
+.pageInfo h1:nth-child(4) span:nth-child(3){
   animation-delay: 1.7s;
 }
-.pageInfo h1:nth-child(4) span:nth-child(3){
+.pageInfo h1:nth-child(4) span:nth-child(4){
   animation-delay: 1.8s;
 }
-.pageInfo h1:nth-child(4) span:nth-child(4){
+.pageInfo h1:nth-child(4) span:nth-child(5){
   animation-delay: 1.9s;
 }
-@keyframes flip {
-  0%,
-  80% {
-    transform: rotateY(360deg);
+.pageInfo h1:nth-child(5) span:nth-child(1){
+  animation-delay: 2s;
+}
+.pageInfo h1:nth-child(5) span:nth-child(2){
+  animation-delay: 2.1s;
+}
+.pageInfo h1:nth-child(5) span:nth-child(3){
+  animation-delay: 2.2s;
+}
+.pageInfo h1:nth-child(5) span:nth-child(4){
+  animation-delay: 2.3s;
+}
+@keyframes infiniteZoom{
+  0%{
+    transform: scale(1);
+  }50%{
+    transform: scale(1.1);
+  }100%{
+    transform: scale(1);
   }
 }
 @keyframes rotateBorder {
@@ -463,5 +519,32 @@ footer{
      opacity: 1;
   }100%{
      opacity: 0;
+  }
+}
+@media (min-width: 750px) and (max-width: 1700px) {
+  .applications{
+    height: fit-content;
+  }
+}
+@media (max-width: 749px) {
+  .applications{
+    height: fit-content;
+  }
+  img{
+    transform: scale(0.7);
+    display: block;
+    margin: auto;
+  }
+  .newChip img, .rxxtGpu img{
+    width: 100%;
+  }
+}
+@media all and (max-width: 1300px) {
+  .topImage ul{
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: 10px;
   }
 }

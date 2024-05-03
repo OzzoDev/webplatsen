@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/*Oscar Burman April 2024*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    color: wheat;
+    scroll-behavior: smooth;
+    background: rgb(28,28,28);
+    background: linear-gradient(90deg, rgba(28,28,28,1) 0%, rgba(138,138,157,1) 55%, rgba(28,28,28,1) 100%);
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+h1, h2, h3, h4, h5, h6{
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+}
+.flexContainer{
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+    flex-wrap: wrap;
+}
+.gridContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+.thinBorder{
+    border: 1px solid grey;
+    padding: 10px;
+    width: fit-content;
+    margin: auto;
+}
+header{
+    background-color: #1C1C1C;
+    align-items:flex-start;
+}
+header h1{
+    padding: 20px;
+}
+#topImage{
+    width: 100%;
+    height: 800px;
+    background: url("images/sevenGpus.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+main section{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    width: min(90%, 1100px);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #21252b;
+}
+main section h1{
+    text-align: left;
+}
+main section h2{
+    text-align: left;
+    font-size: 3em;
+    margin: 0 0 10px 0;
+}
+main section p{
+    font-size: 2.4em;
+    margin-bottom: 10px;
+}
+main section img{
+    margin: 10px 0 10px 0;
+    width: 100%;
+    height: 20%
+}
+.gridContainer p{
+    border-bottom: 1px solid goldenrod;
+}
+.gpuPricing .flexContainer{
+    column-gap: 0;
+    row-gap: 10px;
+    justify-content: flex-start;
+}
+.gpuPricing .flexContainer a{
+    width: max(16.6%, 200px);
+    text-align: center;
+    color: wheat;
+    text-decoration: none;
+}
+.gpuPricing .flexContainer a:hover{
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 2px;
+}
+footer{
+    padding: 20px;
+    background-color: #1C1C1C;
+}
