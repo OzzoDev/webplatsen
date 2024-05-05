@@ -21,6 +21,9 @@ h1, h2, h3, h4, h5, h6{
     font-size: 4em;
     font-weight: bold;
 }
+.centerHeader{
+    text-align: center;
+}
 .flexContainer{
     display: flex;
     justify-content: center;
@@ -43,15 +46,91 @@ header{
     background-color: #1C1C1C;
     align-items:flex-start;
 }
+aside{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    position: fixed;
+    top: 0;
+    left: -320px;
+    padding: 10px;
+    z-index: 100;
+    width: fit-content;
+    pointer-events: all;
+    transition: .6s ease-in-out;
+  }
+  aside:hover{
+    left: 0;
+  }
+  aside:hover #arrow{
+    transform: scaleX(-1);
+  }
+  aside ul{
+    padding: 10px;
+    border: 1px solid silver;
+  }
+  aside ul li{
+    list-style: none;
+  }
+  aside ul li a{
+    display: block;
+    text-decoration: none;
+    font-size: 4em;
+    color: silver;
+    z-index: 100;
+  }
+  aside ul li a:hover{
+    color: whitesmoke;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+  #arrow{
+    width: 60px;
+    height: 100px;
+    background: url("/images/arrow.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: .6s ease-in-out;
+  }
 header h1{
     padding: 20px;
 }
-#topImage{
+.topImage{
     width: 100%;
     height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     background: url("images/sevenGpus.jpg") no-repeat;
     background-size: cover;
     background-position: center;
+}
+.topImage ul{
+    display: flex;
+    column-gap: 40px;
+    padding: 20px 0 40px 0;
+    list-style: none;
+}
+.sixSeriesGpu{
+    background: url("images/sixGpus.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.ryzenCpu{
+    background: url("images/ryzenImg1.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.topImage ul li a{
+     text-decoration: none;
+     color: black;
+     font-size: 3em;
+     font-weight: 900;
+     text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+}
+.topImage ul li a:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
 }
 main section{
     display: block;
@@ -98,7 +177,128 @@ main section img{
     text-decoration-style: wavy;
     text-decoration-thickness: 2px;
 }
+.amdLogoWithBg{
+    width: 100%;
+    height: 500px;
+    margin: 20px 0 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/images/redBg3.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(5% 5%, 95% 25%, 95% 90%, 5% 70%);
+}
+.amdLogoWithBg img{
+    width: 50%;
+    height: 30%;
+    filter:invert(1) grayscale(10%) contrast(0) brightness(50%);
+}
+.sixSeriesTech{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 60px;
+    align-content: stretch;
+    align-items: stretch;
+}
+.sixSeriesTech div, .ryzenTech div{
+    padding: 10px;
+    border: 1px solid goldenrod;
+    position: relative;
+}
+.sixSeriesTech div p, .ryzenTech div p{
+    border: none;
+}
+.sixSeriesTech div a, .sixSeriesTech div div{
+    display: block;
+    width: fit-content;
+    margin: auto;
+    font-size: 2em;
+    text-decoration: none;
+    padding: 10px;
+    color: wheat;
+    border: 1px solid grey;
+}
+.sixSeriesTech div div{
+    opacity: 0;
+}
+.sixSeriesTech div a{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.fpsBar{
+    background-color: red;
+    padding: 10px;
+    text-align: right;
+}
+.longFpsBar{
+    width: 95%;
+}
+.mediumFpsBar{
+    width: 82%;
+}
+.smallFpsBar{
+    width: 73%;
+}
+.miniFpsBar{
+    width: 61%;
+}
+.ryzenBar{
+    text-align: right;
+    padding: 10px;
+    background-color: orangered;
+}
+.ryzenBarOne{
+    width: 85%;
+}
+.ryzenBarTwo{
+    width: 81%;
+}
+.ryzenBarThree{
+    width: 76%;
+}
+.ryzenBarFour{
+    width: 75%;
+}
+.ryzenBarFive{
+    width: 75%;
+}
+.ryzenBarSix{
+    width: 96%;
+}
+.ryzenBarSeven{
+    width: 84%;
+}
+.ryzenBarEight{
+    width: 76%;
+}
+.ryzenBarNine{
+    width: 76%;
+}
+.ryzenBarTen{
+    width: 69%;
+}
+.intelBar{
+    text-align: right;
+    background-color: gray;
+    padding: 10px;
+    width: 60%;
+}
 footer{
     padding: 20px;
     background-color: #1C1C1C;
+}
+footer a{
+    color: wheat;
+    text-decoration: none;
+    font-size: 4em;
+    align-items: flex-end;
+}
+@media all and (max-width: 1300px) {
+    .topImage ul{
+        flex-direction: column;
+    }
 }
